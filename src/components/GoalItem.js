@@ -1,12 +1,12 @@
-import {StyleSheet, View, Text} from 'react-native'
+import { StyleSheet, View, Text } from "react-native";
 
-const GoalItem = ({text}) => {
-     return (
-				<View style={styles.goalItem}>
-					<Text style={styles.goalText}>{text}</Text>
-				</View>
-			);
-}
+const GoalItem = ({ text }) => {
+	return (
+		<View style={styles.goalItem}>
+			<Text style={styles.goalText}>{text}</Text>
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
 	goalItem: {
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default GoalItem
+export default GoalItem;
