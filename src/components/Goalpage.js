@@ -13,6 +13,12 @@ const Goalpage = () => {
 			{ text: enteredGoalText, id: Math.random().toString() },
 		]);
 	}
+	
+	const deleteGoalHandler = (id) => {
+		setCourseGoals((currentCourseGoals) => {
+			return currentCourseGoals.filter((goal)=> goal.id !== id )
+		});
+	}
 	return (
 		<View style={styles.appContainer}>
 			<GoalInput addGoalHandler={addGoalHandler} />
@@ -20,7 +26,13 @@ const Goalpage = () => {
 				<FlatList
 					data={courseGoals}
 					renderItem={(itemData) => {
-						return <GoalItem text={itemData.item.text} />;
+						return (
+							<GoalItem
+								text={itemData.item.text}
+								id={itemData.item.id}
+								deleteGoalHandler={deleteGoalHandler}
+							/>
+						);
 					}}
 					keyExtractor={(item, index) => {
 						return item.id;
